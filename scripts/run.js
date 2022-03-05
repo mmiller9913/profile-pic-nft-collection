@@ -15,13 +15,16 @@ const main = async () => {
     await pfpContract.deployed();
     console.log("Contract deployed to:", pfpContract.address);
 
-    let txn;
-    txn = await pfpContract.mintPFPNFT(0);
-    await txn.wait();
+    const networkName = hre.network.name;
+    console.log(networkName);
+
+    // let txn;
+    // txn = await pfpContract.mintPFPNFT(0);
+    // await txn.wait();
 
     //Get the value of the NFT's URI 
-    let returnedTokenUri = await pfpContract.tokenURI(0);
-    console.log("Token URI:", returnedTokenUri);
+//     let returnedTokenUri = await pfpContract.tokenURI(0);
+//     console.log("Token URI:", returnedTokenUri);
 }
 
 const runMain = async () => {

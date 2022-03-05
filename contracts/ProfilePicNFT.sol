@@ -33,7 +33,7 @@ contract ProfilePicNFT is ERC721, Ownable {
     PFPAttributes[] defaultPFPs;
 
     constructor(string[] memory pfpNames, string[] memory pfpImageURIs)
-        ERC721("The PFP NFT Collection", "PFP")
+        ERC721("My PFP NFT Collection", "PFP")
     {
         //Loop through all the PFPs and save their values in our contract so we can use them later when we mint our NFTs
         for (uint256 i = 0; i < pfpNames.length; i += 1) {
