@@ -5,6 +5,10 @@ require("@nomiclabs/hardhat-etherscan");
 module.exports = {
   solidity: "0.8.1",
   networks: {
+    matic: {
+      url: process.env.ALCHEMY_API_URL,
+      accounts: [process.env.OTHER_PRIVATE_KEY],
+    },
     rinkeby: {
       url: process.env.ALCHEMY_API_URL,
       accounts: [process.env.ANJUNA_PRIVATE_KEY],
@@ -17,10 +21,6 @@ module.exports = {
       url: process.env.ALCHEMY_API_URL,
       accounts: [process.env.OTHER_PRIVATE_KEY],
     },
-    polygon: {
-      url: process.env.ALCHEMY_API_URL,
-      accounts: [process.env.OTHER_PRIVATE_KEY],
-    }
   },
   //when using polygon
   etherscan: {

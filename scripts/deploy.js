@@ -1,6 +1,7 @@
 // npx hardhat run scripts/deploy.js --network rinkeby
 // npx hardhat run scripts/deploy.js --network mainnet
 // npx hardhat run scripts/deploy.js --network mumbai
+// npx hardhat run scripts/deploy.js --network matic
 
 const args = require('../arguments.js');
 
@@ -21,9 +22,6 @@ const main = async () => {
     txn = await pfpContract.mintPFPNFT(1);
     await txn.wait();
 
-    // txn = await pfpContract.mintPFPNFT(1);
-    // await txn.wait();
-
     const networkName = hre.network.name;
 
     console.log('----------------')
@@ -43,15 +41,11 @@ const runMain = async () => {
 
 runMain();
 
-//before deploying to mainnet
-//1) Change Alchemy node 
+//before deploying 
+//1) Change Alchemy node and also change key in process.env
 //2) Confirm NFT collection name 
-//3) Edit hardhat config to use etherscan API key
+//3) Edit hardhat config to use etherscan or polyscan API key
 
-//where i left off
-//realized deploying this to eth mainnet would cost hundreds
-//going to try deploying to polygon
-//need to test by deploying to mumbai
-//having difficulty getting test MATIC
-//get real MATIC
-//once that works, deploy to polygon mainnet 
+//note for future
+//only image of me was minted
+//to mint naval (_pfpIndex = 0) or kapil (_pfpIndex = 2), use this: https://polygonscan.com/address/0x06386C0f7f2Dc85bfC3F56561ACfaE4240f289F9#writeContract
